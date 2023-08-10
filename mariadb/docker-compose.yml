@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+  mariadb:
+    image: mariadb:lts
+    container_name: mariadb
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=chank
+      - MYSQL_USER=chank
+      - MYSQL_PASSWORD=chank@datas3cr3T
+    volumes:
+      - ./data:/var/lib/mysql
+      - ./config:/etc/mysql/conf.d
+    ports:
+      - 3306:3306
+
